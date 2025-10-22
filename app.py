@@ -7,6 +7,11 @@ app = Flask(__name__)
 CORS(app, origins=["https://eval-ease-pu8m.vercel.app/"])
 
 # ✅ Then define your route
+
+@app.route("/")
+def home():
+    return "Python Analysis Backend is running successfully!"
+
 @app.route('/api/sentiment', methods=['POST'])
 def analyze_sentiment():
     data = request.get_json()
